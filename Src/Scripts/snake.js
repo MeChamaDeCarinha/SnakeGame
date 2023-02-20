@@ -1,7 +1,6 @@
 class Snake {
     alive = true;
     score = 0;
-    snake_size = 1;
     direction = null;
     pos = [createVector(Math.floor(random(0, grid - 1)), Math.floor(random(0, grid - 1)))];
 
@@ -9,7 +8,6 @@ class Snake {
     eat(apple) {
         if(this.pos[0].x == apple.pos.x && this.pos[0].y == apple.pos.y){
             this.score++;
-            this.snake_size++;
 
             // Create another segment
             this.pos.push(createVector(-1, -1));
