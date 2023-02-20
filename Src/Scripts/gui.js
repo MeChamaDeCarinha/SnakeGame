@@ -1,4 +1,4 @@
-function drawGUI(){
+function showGUI(player, game) {
     // Background
     background(24, 24, 24);
 
@@ -22,18 +22,21 @@ function drawGUI(){
     textAlign(LEFT);
     fill(234, 234, 234);
     textSize(20);
-    text("Points: " + points, 10, 60);
-    text("Size: " + snake_size, 10, 90);
-    text("Difficult: " + difficult, 10, 120);
+    text("Points: " + player.score, 10, 60);
+    text("Difficult: " + game.difficult, 10, 90);
 
     // Text - Highscore
     textAlign(CENTER);
     fill(66, 135, 245);
     textSize(25);
-    text("Highscore: " + highscore, offset / 2, height - 15);
+    text("Highscore: " + game.highscore, offset / 2, height - 15);
 }
 
-function drawGrid(){
+function showLose() {
+
+}
+
+function showGrid() {
     // Grid
     stroke(234, 234, 234);
     strokeWeight(1);

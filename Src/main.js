@@ -1,44 +1,28 @@
 // GUI
 let offset = 200;
 let grid = 10;
-let highscore = 0;
 
-// Status
-let points = 0;
-let snake_size = 1;
-let snake_speed = 0.1;
-let difficult = "Normal";
-
-function setup(){
+function setup() {
     createCanvas(900, 500);
-    frameRate(10);
-    player = new Snake();
-    player.alive = true;
+    frameRate(5);    
+    game = new Game();
+    game.status = "Start";
 }
 
-function keyPressed(){
-    if((keyCode == 38 || keyCode == 87) && player.direction != "down"){
-        player.direction = "up";
+function draw() {
+    if(game.status == "Start"){
+        // Setting up new game
+        player = new Snake();
+        apple = new Apple();
+
+        game.new();
+        game.status = "Running";
     }
 
-    if((keyCode == 40 || keyCode == 83) && player.direction != "up"){
-        player.direction = "down";
-    }
+    // Game start
+    showGUI(player, game);
 
-    if((keyCode == 39 || keyCode == 68) && player.direction != "left"){
-        player.direction = "right";
-    }
-    if((keyCode == 37 || keyCode == 65) && player.direction != "right"){
-        player.direction = "left";
-    }
-    console.log(player.direction);
-}
-
-function draw(){
-    drawGUI();
-    if(player.alive){
-        drawGrid();
-        player.show();
-        player.move();
+    if(game.status == "Running"){
+        game.run();    
     }
 }
