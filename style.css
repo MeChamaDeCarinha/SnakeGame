@@ -1,17 +1,12 @@
-html, body {
-    height: 100%;
-
-}
-
 body {
     background-color: #181818;
-    margin: 0;
-    display: flex;
-  
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 canvas {
     border: solid 2px #eaeaea;
+}
+
+textarea:focus, input:focus, select:focus{
+    outline: none;
 }

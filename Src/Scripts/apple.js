@@ -1,6 +1,11 @@
 class Apple {
     pos = createVector(null, null);
 
+    constructor(snake){
+        this.create(snake);
+    }
+
+    // Generate a random position and check if is not the snake  
     create(snake) {
         this.pos.x = Math.floor(random(0, grid - 1));
         this.pos.y = Math.floor(random(0, grid - 1));
@@ -12,6 +17,7 @@ class Apple {
         }
     }
 
+    // Just show de apple :)
     show() {
         push();
         translate(offset, 0);
