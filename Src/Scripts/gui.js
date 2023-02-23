@@ -37,9 +37,12 @@ function startElements(){
     sldBlue.position(((windowWidth - width) / 2) + 750, ((windowHeight - height) / 2) + 460);
 }
 
+<<<<<<< HEAD
 let pi = false;
 let euler = 0;
 
+=======
+>>>>>>> 6fc8dfee5597d7cb26b4acb70ea523e038f22a46
 function showGUI(player, game) {
     // Background
     background(24, 24, 24);
