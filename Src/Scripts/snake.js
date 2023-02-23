@@ -82,7 +82,7 @@ class Snake {
         if (pi && sltM.value() != "Blind") {
             colorMode(HSB, 255);
             fill(euler, 200, 200);
-            euler++;
+            euler += 3;
             if (euler > 255) {
                 euler = 0;
             }
