@@ -1,37 +1,32 @@
 class Game {
     status = null;
-    difficult = "Normal";
     highscore = 0;
+    attempts = 0;
 
-    new() {
-        apple.create(player);
-        player.alive = true;
-        player = new Snake();
-        keyCode = null;
-    }
+    run(snake, apple) {
+        if (snake.alive) {
+            // Snake functions
+            snake.move();
+            snake.eat(apple);
+            snake.colide();
+            snake.control();
+            snake.show();
 
-    run() {
-        // GUI - Grid 
-        showGrid();
-
-        // Snake functions
-        player.move();
-        player.eat(apple);
-        player.colide();
-        player.control();
-        player.show();
-
-        // Apple functions
-        apple.show();
-        
+            // Apple functions
+            apple.show();
+        }
     }
 
     lose(snake) {
-        if(snake.score > this.highscore){
+        // Check if is a new highscore
+        if (snake.score > this.highscore) {
             this.highscore = snake.score;
         }
-        this.new();
+
+        // Kill the snake
+        snake.alive = false;
+
+        // Update attempts counter
+        this.attempts++;
     }
-
-
 }
