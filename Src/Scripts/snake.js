@@ -82,7 +82,6 @@ class Snake {
         this.blue = sldBlue.value();
 
         let line_dist = height / grid;
-<<<<<<< HEAD
         if (pi && sltM.value() != "Blind") {
             colorMode(HSB, 255);
             fill(euler, 200, 200);
@@ -98,12 +97,6 @@ class Snake {
             if (sltM.value() == "Blind") {
                 stroke(234, 234, 234, 255 - i * 50);
                 fill(this.red, this.green, this.blue, 255 - i * 30);
-=======
-        fill(this.red, this.green, this.blue);
-        for (i = 0; i < this.pos.length; i++) {
-            if(sltM.value() == "Blind"){
-                fill(this.red, this.green, this.blue, 255 - i * 50);
->>>>>>> 6fc8dfee5597d7cb26b4acb70ea523e038f22a46
             }
             square(this.pos[i].x * line_dist, this.pos[i].y * line_dist, line_dist);
         }
